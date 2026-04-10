@@ -17,3 +17,6 @@ const languageMap = {
 To try it out, create a pull request that adds files with one of the file extensions above.
 
 The corresponding labels will automatically be added to that pull request.
+
+Two alternative GitHub Actions:
+* https://github.com/cclauss/labels_by_language/blob/main/.github/workflows/labels_by_language.yml
