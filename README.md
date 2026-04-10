@@ -1,5 +1,6 @@
 # labels_by_language
 A GitHub Action that adds language labels to pull requests.
+<img width="826" height="142" alt="image" src="https://github.com/user-attachments/assets/8471f2d3-1817-4de3-91dd-b92f97994341" />
 ```javascript
 // Map programming languages to their file extensions.
 const languageMap = {
