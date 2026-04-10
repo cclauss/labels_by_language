@@ -1,2 +1,18 @@
 # labels_by_language
-A GitHub Action that adds language labels to pull requests
+A GitHub Action that adds language labels to pull requests.
+```javascript
+// Map programming languages to their file extensions.
+const languageMap = {
+  C: ['.c', '.h'],
+  'C++': ['.cpp', '.cc', '.cxx', '.hpp', '.hh', '.hxx'],
+  Go: ['.go'],
+  JavaScript: ['.js', '.jsx'],
+  TypeScript: ['.ts', '.tsx'],
+  Lua_: ['.lua'],
+  Python_: ['.py', '.pyi'],
+  Cython: ['.pyx', '.pxd', '.pxi'],
+  Rust: ['.rs'],
+};
+```
+To try it out, create a pull request that adds files with one of the file extensions above.
+The corresponding labels will automatically be added to that pull request.
