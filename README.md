@@ -20,4 +20,4 @@ The corresponding labels will automatically be added to that pull request.
 
 Two alternative GitHub Actions:
 * https://github.com/cclauss/labels_by_language/blob/main/.github/workflows/labels_by_language.yml
-* Example pull request: #1
+* Example pull request: [#1](https://github.com/cclauss/labels_by_language/pull/1)
