@@ -61,16 +61,16 @@ jobs:
     - uses: actions/github-script@v9
       with:
         script: |
-          const files = await github.paginate(github.rest.pulls.listFiles, {
+          const filenames = (await github.paginate(github.rest.pulls.listFiles, {
             owner: context.repo.owner,
             repo: context.repo.repo,
             pull_number: context.issue.number,
             per_page: 100,
-          });
-          console.log(files);
+          })).map(file => file.filename);
+          console.log(filenames);
 
           const labels = new Set();
-          for (const { filename } of files) {
+          for (const filename of filenames) {
             if (filename.endsWith('.lua')) labels.add('Lua');
             else if (filename.endsWith('.py')) labels.add('Python');
 
