@@ -13,12 +13,12 @@ jobs:
       - uses: actions/github-script@v9
         with:
           script: |
-            const filenames = await github.paginate(github.rest.pulls.listFiles, {
+            const filenames = (await github.paginate(github.rest.pulls.listFiles, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,
               per_page: 100,
-            }).map(file => file.filename);
+            })).map(file => file.filename);
             console.log(filenames);
 
             // Map programming languages to their file extensions.
