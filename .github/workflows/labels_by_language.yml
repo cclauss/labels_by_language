@@ -13,13 +13,13 @@ jobs:
       - uses: actions/github-script@v9
         with:
           script: |
-            const filePaths = (await github.paginate(github.rest.pulls.listFiles, {
+            const filenames = await github.paginate(github.rest.pulls.listFiles, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,
               per_page: 100,
-            })).map(file => file.filename);
-            console.log(filePaths);
+            }).map(file => file.filename);
+            console.log(filenames);
 
             // Map programming languages to their file extensions.
             const languageMap = {
@@ -38,7 +38,7 @@ jobs:
             // If any modified file has an extension, then add the label.
             const labels = Object.entries(languageMap)
               .filter(([_, exts]) =>
-                exts.some(ext => filePaths.some(path => path.endsWith(ext)))
+                exts.some(ext => filenames.some(path => path.endsWith(ext)))
               )
               .map(([label]) => label);
             console.log(labels);
